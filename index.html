@@ -3,12 +3,55 @@
  <meta charset="UTF-8">
  <meta name="garaz">
   <title>Document</title>
+  <link rel="stylesheet" href="styl.css" type="text/css" />
+
+  <script type="text/javascript">
+  function ShowTanks() {
+    const Tanks = JSON.parse(fs.readFileSync("Tanks.json", "utf8"));
+for (const [Tank, value] of Object.entries(Tanks)) {
+document.getElementById("Tanks").innerHTML = Tank
+}}
+</script>
+  
+
   </head>
-<body bgcolor="#08242f">
-<font color="#C0C0C0" size="10">Tu powstanie garaż S0SIK-a</font> <br>
-<font color="#C0C0C0" size="5">Tank 1      </font>     
-<font color="#C0C0C0" size="5">Tank 2      </font>     
-<font color="#C0C0C0" size="5">Tank 3      </font>     
+ <div id="Tanks"></div>
+
+<div id="windowfiltr">
+ <h1>Tier:</h1>
+</div>
+<div id="windowfiltr">
+  <h1>Nacja:</h1>
+ </div>
+ <div id="windowfiltr">
+  <h1>Klasa:</h1>
+ </div>
+ <div id="windowfiltr">
+  <h1>Premium:</h1>
+ </div>
+ <div id="windowfiltr">
+  <h1>Liga:</h1>
+ </div>
+
+
+ <div id="windowtank">
+  <h1>Tiger II</h1>
+ </div>
+ <div id="windowtank">
+  <h1>STRV</h1>
+ </div>
+ <div id="windowtank">
+  <h1>T-32</h1>
+ </div>
+ <div id="windowtank">
+  <h1>Hydra</h1>
+ </div>
+ <div id="windowtank">
+  <h1>Ragnarok</h1>
+ </div>
+ <div id="windowtank">
+  <h1>Emil I</h1>
+ </div>
 
   </body>
 </html>
