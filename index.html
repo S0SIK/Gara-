@@ -4,54 +4,74 @@
  <meta name="garaz">
   <title>Document</title>
   <link rel="stylesheet" href="styl.css" type="text/css" />
-
-  <script type="text/javascript">
-  function ShowTanks() {
-    const Tanks = JSON.parse(fs.readFileSync("Tanks.json", "utf8"));
-for (const [Tank, value] of Object.entries(Tanks)) {
-document.getElementById("Tanks").innerHTML = Tank
-}}
+<script>
+    
 </script>
-  
-
-  </head>
- <div id="Tanks"></div>
-
-<div id="windowfiltr">
- <h1>Tier:</h1>
-</div>
-<div id="windowfiltr">
-  <h1>Nacja:</h1>
- </div>
- <div id="windowfiltr">
-  <h1>Klasa:</h1>
- </div>
- <div id="windowfiltr">
-  <h1>Premium:</h1>
- </div>
- <div id="windowfiltr">
-  <h1>Liga:</h1>
- </div>
-
-
- <div id="windowtank">
-  <h1>Tiger II</h1>
- </div>
- <div id="windowtank">
-  <h1>STRV</h1>
- </div>
- <div id="windowtank">
-  <h1>T-32</h1>
- </div>
- <div id="windowtank">
-  <h1>Hydra</h1>
- </div>
- <div id="windowtank">
-  <h1>Ragnarok</h1>
- </div>
- <div id="windowtank">
-  <h1>Emil I</h1>
- </div>
-
+  <body>
+   <div class="all">
+     <div class="wstep">
+       <div class="logo">Garaż gracza: S0SIK</div>
+     </div>
+     <div class="filtr">
+       <div class="lista"></div>
+       <ol>
+         <li><a>Tier:</a></li>
+         <li><a>Nacja:</a></li>
+         <li><a>Klasa:</a></li>
+         <li><a>Premium:</a></li>
+         <li><a>Liga:</a></li>
+       </ol>
+       <div class="opcje"></div>
+       <select>
+         <option value="All">All</option>
+         <option value="I">I</option>
+         <option value="II">II</option>
+         <option value="III">III</option>
+         <option value="IV">IV</option>
+         <option value="V">V</option>
+         <option value="VI">VI</option>
+         <option value="VII">VII</option>
+         <option value="VIII">VIII</option>
+         <option value="IX">IX</option>
+         <option value="X">X</option>
+      </select>
+      <select>
+        <option value="All">All</option>
+        <option value="USA">USA</option>
+        <option value="ZSRR">ZSRR</option>
+        <option value="Niemieckie">Niemieckie</option>
+        <option value="Brytyjskie">Brytyjskie</option>
+        <option value="Francuskie">Francuskie</option>
+        <option value="Chińskie">Chińskie</option>
+        <option value="Japońskie">Japońskie</option>
+        <option value="Czechosłowackie">Czechosłowackie</option>
+        <option value="Szweckie">Szweckie</option>
+        <option value="Polskie">Polskie</option>
+        <option value="Woskie">Woskie</option>
+        <option value="Najemnice">Najemnice</option>
+      </select>
+      <select>
+        <option value="All">All</option>
+        <option value="LT">LT</option>
+        <option value="MT">MT</option>
+        <option value="HT">HT</option>
+        <option value="TD">TD</option>
+        <option value="Arta">Arta</option>
+      </select>
+      <select>
+        <option value="All">All</option>
+        <option value="Tak">Tak</option>
+        <option value="Nie">Nie</option>
+      </select>
+      <select>
+        <option value="All">All</option>
+        <option value="Tak">Tak</option>
+        <option value="Nie">Nie</option>
+      </select>
+     </div>
+     <div class="tanks">
+       
+     </div>
+   </div>
   </body>
 </html>
