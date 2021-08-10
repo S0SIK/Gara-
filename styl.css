@@ -1,37 +1,104 @@
 body {
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #08242f;
-    font-family: Verdana;
+    background: #030022;
+    font-family: monospace;
+    font-size: 20px;
+    margin: 0 !important;
+}
+
+.all {
+    width: 100%;
+    color: azure;
+}
+
+.wstep {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.logo {
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+}
+
+.filtr {
+    width: 100%;
+    padding: 10px 0;
+    height: 160px;
+    text-align: center;
+    background: #0b026d;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+
+}
+
+.lista {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+}
+
+.opcje {
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    align-items: center;
+}
+
+ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
     font-size: 30px;
-    color: #C0C0C0;
+    height: 35px;
+    line-height: 200%;
+    display: inline-block;
 }
 
-#windowfiltr {
-    background-color: #aeb7bb;
-    float: left;
-    color: #ff0000;
-    padding: 10px;
-    width: 120;
-    min-height: 20px;
-    break-before: 10px;
-    border: 10px solid #000000;
-    margin: 20px;
-    font-size: 10px;
-    text-align: center;
+select {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    top: 20px;
+    height: 35px;
+    line-height: 200%;
+    width: 193px;
+    border-right: solid #030022;
+    border-left: solid #030022;
+    border-top: solid #030022;
+    border-bottom: solid #030022;
+    height: 90px;
+    box-shadow: 0 10px 25px #030022;
+    font-size: 30px;
+    padding: 0;
+    background: #0b026d;
+    color: rgb(199, 16, 16);
+    align-items: center;
 }
 
-#windowtank {
-    background-color: #aeb7bb;
+select>option {
+    color: red;
+}
+
+ol a {
+    color: white;
+    text-decoration: none;
+    display: block;
+
+}
+
+ol>li {
+    width: 200px;
+    height: 160px;
     float: left;
-    color: #ff0000;
-    padding: 10px;
-    width: 250px;
-    min-height: 300px;
-    break-before: 10px;
-    border: 10px solid #000000;
-    margin: 20px;
-    font-size: 15px;
-    text-align: center;
+    border-right: solid #030022;
+}
+
+ol>li:first-child {
+    border-left: solid #030022;
 }
