@@ -67,7 +67,7 @@ select {
     top: 20px;
     height: 35px;
     line-height: 200%;
-    width: 193px;
+    width: 281.5px;
     border-right: solid #030022;
     border-left: solid #030022;
     border-top: solid #030022;
@@ -93,7 +93,7 @@ ol a {
 }
 
 ol>li {
-    width: 200px;
+    width: 290px;
     height: 160px;
     float: left;
     border-right: solid #030022;
@@ -101,4 +101,38 @@ ol>li {
 
 ol>li:first-child {
     border-left: solid #030022;
+}
+
+.tanks {
+    border: 1px solid white;
+}
+
+.tank {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid white;
+    margin: 10px;
+    align-items: center;
+}
+
+.opcje>select>option center {
+    align-items: center;
+}
+
+.true {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid white;
+    margin: 10px;
+    align-items: center;
+    background: #857102;
+}
+
+.false {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid white;
+    margin: 10px;
+    align-items: center;
+    background: #696969;
 }
