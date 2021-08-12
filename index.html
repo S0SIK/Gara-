@@ -1,77 +1,110 @@
 <html lang="pl">
+
 <head>
- <meta charset="UTF-8">
- <meta name="garaz">
+  <meta charset="UTF-8">
+  <meta name="garaz">
   <title>Document</title>
   <link rel="stylesheet" href="styl.css" type="text/css" />
-<script>
-    
-</script>
-  <body>
-   <div class="all">
-     <div class="wstep">
-       <div class="logo">Garaż gracza: S0SIK</div>
-     </div>
-     <div class="filtr">
-       <div class="lista"></div>
-       <ol>
-         <li><a>Tier:</a></li>
-         <li><a>Nacja:</a></li>
-         <li><a>Klasa:</a></li>
-         <li><a>Premium:</a></li>
-         <li><a>Liga:</a></li>
-       </ol>
-       <div class="opcje"></div>
-       <select>
-         <option value="All">All</option>
-         <option value="I">I</option>
-         <option value="II">II</option>
-         <option value="III">III</option>
-         <option value="IV">IV</option>
-         <option value="V">V</option>
-         <option value="VI">VI</option>
-         <option value="VII">VII</option>
-         <option value="VIII">VIII</option>
-         <option value="IX">IX</option>
-         <option value="X">X</option>
+  <script type="text/javascript">
+    const API_id = `10a871f6fab9f5647fdb2d0a433a0910`
+
+    fetch('tanks.json')
+      .then(response => response.json())
+      .then(data => {
+        for (const [key, value] of Object.entries(data)) {
+          const API = `https://api-console.worldoftanks.com/wotx/encyclopedia/vehicles/?application_id=${API_id}&tank_id=${key}`
+          fetch(API)
+            .then(response => response.json())
+            .then(data => {
+              const short_name = data.data[key].short_name
+              const big_icon = data.data[key].images.big_icon
+              const tier = data.data[key].tier
+              const premium = data.data[key].is_premium
+              const nacja = data.data[key].nation
+              const klasa = data.data[key].type
+
+              const htm = `<div class="${premium}"><h1>${short_name}</h1><img src="${big_icon}" width="272" height="152
+              "></img></br> Tier: ${tier} <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img><img src="img/${klasa}.gif" width="56" height="40"></img> </br>
+                perks: ${value.perks} eq: ${value.eq} </div>`;
+              document
+                .getElementById("tank")
+                .insertAdjacentHTML("beforeend", htm);
+
+
+            })
+        }
+      });
+
+
+
+  </script>
+
+<body>
+  <div class="all">
+    <div class="wstep">
+      <div class="logo">Garaż gracza: S0SIK</div>
+    </div>
+    <div class="filtr">
+      <div class="lista"></div>
+      <ol>
+        <li><a>Tier:</a></li>
+        <li><a>Nacja:</a></li>
+        <li><a>Klasa:</a></li>
+        <li><a>Premium:</a></li>
+        <li><a>Liga:</a></li>
+      </ol>
+      <div class="opcje"></div>
+      <select id="Tier">
+        <option value="All" id="tier" select>All</option>
+        <option value="1" id="tier">I</option>
+        <option value="2" id="tier">II</option>
+        <option value="3" id="tier">III</option>
+        <option value="4" id="tier">IV</option>
+        <option value="5" id="tier">V</option>
+        <option value="6" id="tier">VI</option>
+        <option value="7" id="tier">VII</option>
+        <option value="8" id="tier">VIII</option>
+        <option value="9" id="tier">IX</option>
+        <option value="10" id="tier">X</option>
       </select>
       <select>
-        <option value="All">All</option>
-        <option value="USA">USA</option>
-        <option value="ZSRR">ZSRR</option>
-        <option value="Niemieckie">Niemieckie</option>
-        <option value="Brytyjskie">Brytyjskie</option>
-        <option value="Francuskie">Francuskie</option>
-        <option value="Chińskie">Chińskie</option>
-        <option value="Japońskie">Japońskie</option>
-        <option value="Czechosłowackie">Czechosłowackie</option>
-        <option value="Szweckie">Szweckie</option>
-        <option value="Polskie">Polskie</option>
-        <option value="Woskie">Woskie</option>
-        <option value="Najemnice">Najemnice</option>
+        <option value="All" id="nacja" selected>All</option>
+        <option value="USA" id="nacja">USA</option>
+        <option value="ZSRR" id="nacja">ZSRR</option>
+        <option value="Niemieckie" id="nacja">Niemieckie</option>
+        <option value="Brytyjskie" id="nacja">Brytyjskie</option>
+        <option value="Francuskie" id="nacja">Francuskie</option>
+        <option value="Chińskie" id="nacja">Chińskie</option>
+        <option value="Japońskie" id="nacja">Japońskie</option>
+        <option value="Czechosłowackie" id="nacja">Czechosłowackie</option>
+        <option value="Szweckie" id="nacja">Szweckie</option>
+        <option value="Polskie" id="nacja">Polskie</option>
+        <option value="Woskie" id="nacja">Woskie</option>
+        <option value="Najemnice" id="nacja">Najemnice</option>
       </select>
       <select>
-        <option value="All">All</option>
-        <option value="LT">LT</option>
-        <option value="MT">MT</option>
-        <option value="HT">HT</option>
-        <option value="TD">TD</option>
-        <option value="Arta">Arta</option>
+        <option value="All" id="klasa" selected>All</option>
+        <option value="LT" id="klasa">LT</option>
+        <option value="MT" id="klasa">MT</option>
+        <option value="HT" id="klasa">HT</option>
+        <option value="TD" id="klasa">TD</option>
+        <option value="Arta" id="klasa">Arta</option>
       </select>
       <select>
-        <option value="All">All</option>
+        <option value="All" id="" selected>All</option>
         <option value="Tak">Tak</option>
         <option value="Nie">Nie</option>
       </select>
       <select>
-        <option value="All">All</option>
+        <option value="All" id=selected>All</option>
         <option value="Tak">Tak</option>
         <option value="Nie">Nie</option>
       </select>
-     </div>
-     <div class="tanks">
-       
-     </div>
-   </div>
-  </body>
+    </div>
+    <div class="tanks">
+      <div id="tank"></div>
+    </div>
+  </div>
+</body>
+
 </html>
