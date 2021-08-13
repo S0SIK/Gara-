@@ -5,6 +5,7 @@
   <meta name="garaz">
   <title>Document</title>
   <link rel="stylesheet" href="styl.css" type="text/css" />
+  <script src="jquery-3.6.0.min.js"></script>
   <script type="text/javascript">
     const API_id = `10a871f6fab9f5647fdb2d0a433a0910`
 
@@ -23,9 +24,8 @@
               const nacja = data.data[key].nation
               const klasa = data.data[key].type
 
-              const htm = `<div class="${premium}"><h1>${short_name}</h1><img src="${big_icon}" width="272" height="152
-              "></img></br> Tier: ${tier} <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img><img src="img/${klasa}.gif" width="56" height="40"></img> </br>
-                perks: ${value.perks} eq: ${value.eq} </div>`;
+              const htm = `<div class="${premium}"><h1 class="logo">${short_name}</h1><img src="${big_icon}" width="272" height="152
+              "></img></br><div class="logo">     <img src="img/${tier}.png" width="40" height="40">    <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img>     <img src="img/${klasa}.gif" width="56" height="40"></img></div>`;
               document
                 .getElementById("tank")
                 .insertAdjacentHTML("beforeend", htm);
@@ -35,7 +35,25 @@
         }
       });
 
+    $(document).ready(function () {
+      var NavY = $('.filtr').offset().top;
 
+      var stickyNav = function () {
+        var ScrollY = $(window).scrollTop();
+
+        if (ScrollY > NavY) {
+          $('.filtr').addClass('sticky');
+        } else {
+          $('.filtr').removeClass('sticky');
+        }
+      };
+
+      stickyNav();
+
+      $(window).scroll(function () {
+        stickyNav();
+      });
+    });
 
   </script>
 
@@ -55,17 +73,39 @@
       </ol>
       <div class="opcje"></div>
       <select id="Tier">
-        <option value="All" id="tier" select>All</option>
-        <option value="1" id="tier">I</option>
-        <option value="2" id="tier">II</option>
-        <option value="3" id="tier">III</option>
-        <option value="4" id="tier">IV</option>
-        <option value="5" id="tier">V</option>
-        <option value="6" id="tier">VI</option>
-        <option value="7" id="tier">VII</option>
-        <option value="8" id="tier">VIII</option>
-        <option value="9" id="tier">IX</option>
-        <option value="10" id="tier">X</option>
+        <div>
+          <option value="All" id="tier" select>All</option>
+        </div>
+        <div>
+          <option value="1" id="tier">I</option>
+        </div>
+        <div>
+          <option value="2" id="tier">II</option>
+        </div>
+        <div>
+          <option value="3" id="tier">III</option>
+        </div>
+        <div>
+          <option value="4" id="tier">IV</option>
+        </div>
+        <div>
+          <option value="5" id="tier">V</option>
+        </div>
+        <div>
+          <option value="6" id="tier">VI</option>
+        </div>
+        <div>
+          <option value="7" id="tier">VII</option>
+        </div>
+        <div>
+          <option value="8" id="tier">VIII</option>
+        </div>
+        <div>
+          <option value="9" id="tier">IX</option>
+        </div>
+        <div>
+          <option value="10" id="tier">X</option>
+        </div>
       </select>
       <select>
         <option value="All" id="nacja" selected>All</option>
@@ -102,9 +142,10 @@
       </select>
     </div>
     <div class="tanks">
-      <div id="tank"></div>
+      <div class=tank id="tank"></div>
     </div>
   </div>
+
 </body>
 
 </html>
