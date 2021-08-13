@@ -8,8 +8,11 @@ body {
 .all {
     width: 100%;
     color: azure;
+    background-image: url("img/tlo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
 .wstep {
     width: 100%;
     padding: 40px 0;
@@ -19,6 +22,11 @@ body {
     width: 100%;
     font-size: 40px;
     text-align: center;
+    text-shadow: 2px 2px 5px black;
+    text-shadow: -2px 2px 5px black;
+    text-shadow: -2px -2px 5px black;
+    text-shadow: 2px -2px 5px black;
+
 }
 
 .filtr {
@@ -26,11 +34,19 @@ body {
     padding: 10px 0;
     height: 160px;
     text-align: center;
+    opacity: 0.9;    
     background: #0b026d;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 
+}
 
+.sticky {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .lista {
@@ -39,7 +55,6 @@ body {
     left: 0;
     top: 0;
     z-index: 100;
-
 }
 
 .opcje {
@@ -62,12 +77,12 @@ ol {
 
 select {
     position: relative;
-    padding: 0;
+    padding: 10;
     margin: 0;
     top: 20px;
     height: 35px;
     line-height: 200%;
-    width: 281.5px;
+    width: 174.5px;
     border-right: solid #030022;
     border-left: solid #030022;
     border-top: solid #030022;
@@ -79,21 +94,25 @@ select {
     background: #0b026d;
     color: rgb(199, 16, 16);
     align-items: center;
+   
 }
 
 select>option {
     color: red;
+    align-items: flex-start;
+    display: flex;
 }
 
-ol a {
+ol >li a {
     color: white;
     text-decoration: none;
     display: block;
+    align-items: flex-start;
 
 }
 
 ol>li {
-    width: 290px;
+    width: 180px;
     height: 160px;
     float: left;
     border-right: solid #030022;
@@ -103,14 +122,9 @@ ol>li:first-child {
     border-left: solid #030022;
 }
 
-.tanks {
-    border: 1px solid white;
-}
-
 .tank {
     display: inline-block;
     padding: 10px;
-    border: 1px solid white;
     margin: 10px;
     align-items: center;
 }
@@ -120,19 +134,23 @@ ol>li:first-child {
 }
 
 .true {
+    width: 28.4%;
     display: inline-block;
     padding: 10px;
-    border: 1px solid white;
+    border: 3px solid #f9f2b0;
     margin: 10px;
     align-items: center;
-    background: #857102;
+    background: #bdaa58;
 }
 
 .false {
+    width: 28.4%;
+    background-image: url("img/siatka.png");
     display: inline-block;
     padding: 10px;
-    border: 1px solid white;
+    border: 3px solid #f9f2b0;
     margin: 10px;
     align-items: center;
-    background: #696969;
+    opacity: 0.9;
+    background: #a3aba8;
 }
