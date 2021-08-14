@@ -61,9 +61,9 @@ body {
     height: 160px;
     text-align: center;
     opacity: 0.9;    
-    background: #0b026d;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    background: #1a1738;
+    border-top: 3px solid #f9f2b0;
+    border-bottom: 3px solid #f9f2b0;
 
 }
 
@@ -161,13 +161,14 @@ ol>li:first-child {
 
 .true {
     margin-top: -27px;
-    background: rgba(255, 239, 17, 0.6);
+    background: rgb(255,208,0);
+    background: linear-gradient(71deg, rgba(255,208,0,1) 0%, rgba(203,172,0,0.6) 7%, rgba(157,159,0,0.6) 14%, rgba(200,190,0,0.6) 21%, rgba(249,224,0,0.6) 28%, rgba(201,188,0,0.6) 35%, rgba(163,152,0,0.6) 42%, rgba(201,201,0,0.6) 50%, rgba(238,255,0,0.6) 57%, rgba(208,201,0,0.6) 64%, rgba(171,157,0,0.6) 71%, rgba(192,203,0,0.6) 78%, rgba(229,255,0,0.6) 85%, rgba(198,191,0,0.6) 94%, rgba(145,150,0,0.6) 100%);
 }
 
 .false {
     margin-top: -27px;
-    width: 100%;
-    background: rgb(107, 106, 106, 0.6); 
+    background: rgb(40,40,40);
+    background: linear-gradient(71deg, rgba(40,40,40,1) 0%, rgba(113,113,113,0.6) 7%, rgba(199,199,199,0.6) 14%, rgba(223,223,223,0.6) 21%, rgba(171,171,171,0.6) 28%, rgba(123,124,124,0.6) 35%, rgba(161,162,162,0.6) 42%, rgba(201,201,201,0.6) 50%, rgba(238,238,238,0.6) 57%, rgba(184,184,184,0.6) 64%, rgba(113,113,113,0.6) 71%, rgba(171,171,171,0.6) 78%, rgba(249,249,249,0.6) 85%, rgba(167,167,167,0.6) 94%, rgba(82,82,82,0.6) 100%);
 }
 
 .siatka {
