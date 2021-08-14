@@ -7,14 +7,15 @@
   <link rel="stylesheet" href="styl.css" type="text/css" />
   <script src="jquery-3.6.0.min.js"></script>
   <script type="text/javascript">
+    const Game_id = `1073747782`
     const API_id = `10a871f6fab9f5647fdb2d0a433a0910`
 
     fetch('tanks.json')
       .then(response => response.json())
       .then(data => {
         for (const [key, value] of Object.entries(data)) {
-          const API = `https://api-console.worldoftanks.com/wotx/encyclopedia/vehicles/?application_id=${API_id}&tank_id=${key}`
-          fetch(API)
+          const API_tanks = `https://api-console.worldoftanks.com/wotx/encyclopedia/vehicles/?application_id=${API_id}&tank_id=${key}`
+          fetch(API_tanks)
             .then(response => response.json())
             .then(data => {
               const short_name = data.data[key].short_name
@@ -24,13 +25,20 @@
               const nacja = data.data[key].nation
               const klasa = data.data[key].type
 
-              const htm = `<div class="${premium}"><h1 class="logo">${short_name}</h1><img src="${big_icon}" width="272" height="152
-              "></img></br><div class="logo">     <img src="img/${tier}.png" width="40" height="40">    <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img>     <img src="img/${klasa}.gif" width="56" height="40"></img></div>`;
-              document
-                .getElementById("tank")
-                .insertAdjacentHTML("beforeend", htm);
+              const API_player = `https://api-console.worldoftanks.com/wotx/tanks/stats/?application_id=${API_id}&account_id=${Game_id}&tank_id=${key}`
+              fetch(API_player)
+                .then(response => response.json())
+                .then(data => {
 
 
+
+
+                  const htm = `<div class="siatka"><div class="${premium}"><h1 class="logo2">${short_name}</h1><img src="${big_icon}" width="272" height="152
+              "></img></br><div class="logo3">     <img src="img/${tier}.png" width="40" height="40">    <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img>     <img src="img/${klasa}.gif" width="56" height="40"></img></div></div>`;
+                  document
+                    .getElementById("tank")
+                    .insertAdjacentHTML("beforeend", htm);
+                })
             })
         }
       });
