@@ -9,6 +9,7 @@ body {
     width: 100%;
     color: azure;
     background-image: url("img/tlo.png");
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,7 +27,32 @@ body {
     text-shadow: -2px 2px 5px black;
     text-shadow: -2px -2px 5px black;
     text-shadow: 2px -2px 5px black;
+}
 
+.logo2 {
+    top: -20px;
+    width: 100%;
+    margin: 0;
+    margin-top: 27px;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+    text-shadow: -2px 2px 5px black;
+    text-shadow: -2px -2px 5px black;
+    text-shadow: 2px -2px 5px black;
+}
+
+.logo3 {
+    background-color: darkslategrey;
+    width: 100%;
+    border-top: black solid 2px;
+    height: 41px;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+    text-shadow: -2px 2px 5px black;
+    text-shadow: -2px -2px 5px black;
+    text-shadow: 2px -2px 5px black;
 }
 
 .filtr {
@@ -134,23 +160,23 @@ ol>li:first-child {
 }
 
 .true {
-    width: 28.4%;
-    display: inline-block;
-    padding: 10px;
-    border: 3px solid #f9f2b0;
-    margin: 10px;
-    align-items: center;
-    background: #bdaa58;
+    margin-top: -27px;
+    background: rgba(255, 239, 17, 0.6);
 }
 
 .false {
-    width: 28.4%;
-    background-image: url("img/siatka.png");
-    display: inline-block;
-    padding: 10px;
-    border: 3px solid #f9f2b0;
-    margin: 10px;
+    margin-top: -27px;
+    width: 100%;
+    background: rgb(107, 106, 106, 0.6); 
+}
+
+.siatka {
     align-items: center;
-    opacity: 0.9;
-    background: #a3aba8;
+    border: 3px solid #f9f2b0;
+    margin: 13px;
+    width: 270px;
+    display: inline-block;
+    background-image: url("img/siatka.png");
+    background-size: 100%;
+    background-position: center;
 }
