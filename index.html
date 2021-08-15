@@ -13,7 +13,24 @@
     fetch('tanks.json')
       .then(response => response.json())
       .then(data => {
-        for (const [key, value] of Object.entries(data)) {
+        let mySelectedData = [];
+        const keys = Object.keys(data)
+
+        for (let i = 0; i < Object.keys(data).length; i++) {
+          const inner = data[keys[i]];
+          const innerKeys = Object.keys(inner);
+
+          for (let j = 0; j < Object.keys(inner).length; j++) {
+            const inner2 = inner[innerKeys[j]];
+            if (Object.keys(inner2).length !== 0) {
+
+              for (const [key, value] of Object.entries(inner2)) {
+                mySelectedData[key] = value;
+              }
+            }
+          }
+        }
+        for (const [key, value] of Object.entries(mySelectedData)) {
           const API_tanks = `https://api-console.worldoftanks.com/wotx/encyclopedia/vehicles/?application_id=${API_id}&tank_id=${key}`
           fetch(API_tanks)
             .then(response => response.json())
@@ -24,15 +41,10 @@
               const premium = data.data[key].is_premium
               const nacja = data.data[key].nation
               const klasa = data.data[key].type
-
               const API_player = `https://api-console.worldoftanks.com/wotx/tanks/stats/?application_id=${API_id}&account_id=${Game_id}&tank_id=${key}`
               fetch(API_player)
                 .then(response => response.json())
                 .then(data => {
-
-
-
-
                   const htm = `<div class="siatka" id="${key}" type="button" onclick="Tank()"><div class="${premium}"><h1 class="logo2">${short_name}</h1><img src="${big_icon}" width="272" height="152
               "></img></br><div class="logo3">     <img src="img/${tier}.png" width="40" height="40">    <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img>     <img src="img/${klasa}.gif" width="56" height="40"></img></div></div>`;
                   document
@@ -42,14 +54,13 @@
             })
         }
       });
-
     function Tank() {
-      const htm2 = `<div>Test</div>`
+      const htm2 = `<div class="siatka"><img src="img/siatka.png">Tank</img></div>`
       document
-        .getElementById("tank")
+        .getElementById(`okno`)
         .insertAdjacentHTML("beforeend", htm2);
-    }
 
+    }
     $(document).ready(function () {
       var NavY = $('.filtr').offset().top;
 
@@ -69,14 +80,10 @@
         stickyNav();
       });
     });
-
   </script>
 
 <body>
-  <div class="all">
-    <div class="wstep">
-      <div class="logo">Garaż gracza: S0SIK</div>
-    </div>
+  <div class="all" id="okno">
     <div class="filtr">
       <div class="lista"></div>
       <ol>
@@ -156,11 +163,13 @@
         <option value="Nie">Nie</option>
       </select>
     </div>
+    <div class="wstep">
+      <div class="logo">Garaż gracza: S0SIK</div>
+    </div>
     <div class="tanks">
       <div class=tank id="tank"></div>
     </div>
   </div>
-
 </body>
 
 </html>
