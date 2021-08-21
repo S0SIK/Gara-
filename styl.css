@@ -3,23 +3,33 @@ body {
     font-family: monospace;
     font-size: 20px;
     margin: 0 !important;
-}
-
-.all {
-    width: 100%;
-    color: azure;
     background-image: url("img/tlo.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
+}
+
+.all {
+    width: 100%;
+    
 }
 .wstep {
     width: 100%;
     padding: 40px 0;
 }
 
+.info {
+    background-color: #ff0000;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
 .logo {
+    color: white;
     width: 100%;
     font-size: 40px;
     text-align: center;
@@ -70,7 +80,7 @@ body {
 .sticky {
     z-index: 100;
     position: fixed;
-    top: 0;
+    top: 0px;
     left: 0;
     width: 100%;
 }
@@ -173,6 +183,7 @@ ol>li:first-child {
 
 .siatka {
     align-items: center;
+    color: white;
     border: 3px solid #f9f2b0;
     margin: 13px;
     width: 270px;
@@ -180,4 +191,99 @@ ol>li:first-child {
     background-image: url("img/siatka.png");
     background-size: 100%;
     background-position: center;
+}
+
+.test {
+    display: inline-block;
+    width: 0;
+}
+
+.tlo {
+    width: 100%;
+    padding: 20px;
+    border: 3px solid #f9f2b0;
+    background-color: rgb(199, 118, 13);
+    color: white;
+}
+.box {
+   
+    display: flex;
+    justify-content: center;
+}
+
+.box_2 {
+    Top: 0;
+    width: 100%;
+    background-color: darkslategrey;
+    border: 3px solid #f9f2b0;
+}
+
+.box_4 {
+    margin-top: 12px;
+    width: 270px;
+    background-color: darkslategrey;
+    border: 3px solid #f9f2b0;
+    margin-left: 30px;
+}
+.box_5 {
+    margin-top: 13px;
+    width: 100%;
+    background-color: darkslategrey;
+    border: 3px solid #f9f2b0;
+    margin-left: 20px;
+}
+
+.P_ {
+    width: 70px;
+    height: 70px;
+    border: 3px solid #f9f2b0;
+    background-color: black;
+    margin: 0;
+    margin-right: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.E_ {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #f9f2b0;
+    background-color: black;
+    margin: 0;
+    margin-right: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.V {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #f9f2b0;
+    background-color: black;
+    margin: 0;
+    margin-right: 5px;
+    margin-left: 102px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.box_3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.stats{
+    top: -20px;
+    width: 100%;
+    margin: 0;
+    margin-top: 27px;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+    text-shadow: -2px 2px 5px black;
+    text-shadow: -2px -2px 5px black;
+    text-shadow: 2px -2px 5px black;
 }
