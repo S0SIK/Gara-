@@ -3,16 +3,19 @@ const API_id = `10a871f6fab9f5647fdb2d0a433a0910`
 
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
+
 
 function openModal(modal) {
     if (modal == null) return
+    const overlay = document.getElementById('overlay')
     modal.classList.add('active')
     overlay.classList.add('active')
 }
 
 function closeModal(modal) {
     if (modal == null) return
+
+    const overlay = document.getElementById('overlay')
     modal.classList.remove('active')
     overlay.classList.remove('active')
 }
@@ -104,7 +107,7 @@ fetch('tanks.json')
 
 
 
-                            const htm2 = `<button data-close-button class="close-button">&times;</button>
+                            const htm2 = `
                             <div class="box">
                             <div>
                             <div class="siatka" id="info" value="${key}">
@@ -211,12 +214,7 @@ fetch('tanks.json')
                                 }
                             });
 
-                            closeModalButtons.forEach(button => {
-                                button.addEventListener('click', () => {
-                                    const modal = button.closest(`.modal`)
-                                    closeModal(modal)
-                                })
-                            })
+
 
                         })
                 })
@@ -242,4 +240,12 @@ $(document).ready(function () {
     $(window).scroll(function () {
         stickyNav();
     });
+
+    const overlay = document.getElementById('overlay')
+
+    overlay.addEventListener('click', () => {
+        const overlay = document.getElementById('overlay')
+        modal.classList.remove('active')
+        overlay.classList.remove('active')
+    })
 });
