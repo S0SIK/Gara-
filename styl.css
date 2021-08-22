@@ -197,27 +197,13 @@ ol>li:first-child {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.test {
-    display: inline-block;
-    width: 0;
-}
-
-.tlo {
-    border: 3px solid #f9f2b0;
-    background-color: rgb(199, 118, 13);
-    border-radius: 10px;
-    color: white;
-    z-index: 111;
-}
-
-
 .modal {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
-    width: 50%;
+    width: 70%;
     max-width: 80%;
     padding: 20px;
     border: 3px solid #f9f2b0;
