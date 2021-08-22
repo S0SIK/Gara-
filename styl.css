@@ -190,11 +190,12 @@ ol>li:first-child {
     display: inline-block;
     background-image: url("img/siatka.png");
     background-size: 100%;
+    border-radius: 5px;
     background-position: center;
 }
 
-.siatka.active {
-    transform: translate(-50%, -50%) scale(1);
+.siatka.margin {
+    margin-left: 50px;
 }
 
 .modal {
@@ -205,7 +206,7 @@ ol>li:first-child {
     transition: 200ms ease-in-out;
     width: 80%;
     max-width: 80%;
-    padding: 20px;
+    padding: 10px;
     border: 3px solid #f9f2b0;
     background-color: rgb(199, 118, 13);
     border-radius: 10px;
@@ -242,26 +243,49 @@ ol>li:first-child {
 
 .box_2 {
     Top: 0;
+    margin-top: 17px;
     width: 100%;
     background-color: darkslategrey;
     border: 3px solid #f9f2b0;
+    border-radius: 10px;
+    margin-left: 15px;
 }
 
+.box_3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.box_3.pading {
+   padding-bottom: 10px;
+}
 .box_4 {
     margin-top: 12px;
     width: 270px;
     background-color: darkslategrey;
     border: 3px solid #f9f2b0;
-    margin-left: 30px;
+    border-radius: 10px;
+    margin-left: 55px;
+    padding: 10px;
 }
 .box_5 {
     margin-top: 13px;
-    width: 100%;
+    width: 90%;
     background-color: darkslategrey;
     border: 3px solid #f9f2b0;
-    margin-left: 20px;
+    border-radius: 10px;
+    margin-left: 40px;
+    padding: auto;
 }
-
+.box_6 {
+    margin-top: 13px;
+    width: 95%;
+    background-color: darkslategrey;
+    border: 3px solid #f9f2b0;
+    border-radius: 10px;
+    margin-left: 20px;
+    padding: auto;
+}
 .P_ {
     width: 70px;
     height: 70px;
@@ -295,13 +319,6 @@ ol>li:first-child {
     margin-left: 102px;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-
-.box_3 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .stats{
