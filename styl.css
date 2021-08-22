@@ -203,6 +203,15 @@ ol>li:first-child {
 }
 
 .tlo {
+    border: 3px solid #f9f2b0;
+    background-color: rgb(199, 118, 13);
+    border-radius: 10px;
+    color: white;
+    z-index: 111;
+}
+
+
+.modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -218,7 +227,7 @@ ol>li:first-child {
     z-index: 111;
 }
 
-.tlo.active {
+.modal.active {
     transform: translate(-50%, -50%) scale(1);
 }
 
@@ -233,12 +242,10 @@ ol>li:first-child {
     pointer-events: none;
 }
 
-#overlay.active {
+overlay.active {
     opacity: 1;
     pointer-events: all;
 }
-
-
 
 .box {
    
