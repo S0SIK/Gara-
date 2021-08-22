@@ -203,7 +203,7 @@ ol>li:first-child {
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
-    width: 70%;
+    width: 80%;
     max-width: 80%;
     padding: 20px;
     border: 3px solid #f9f2b0;
@@ -228,9 +228,10 @@ ol>li:first-child {
     pointer-events: none;
 }
 
-overlay.active {
+#overlay.active {
     opacity: 1;
     pointer-events: all;
+    background-color: rgb(00, 00, 00, 0.5);
 }
 
 .box {
