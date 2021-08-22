@@ -110,7 +110,7 @@ fetch('tanks.json')
                             const htm2 = `
                             <div class="box">
                             <div>
-                            <div class="siatka" id="info" value="${key}">
+                            <div class="siatka margin" id="info" value="${key}">
                             <div class="${premium}">
                             <h1 class="logo2">${short_name}</h1>
                             <img src="${big_icon}" width="272" height="152"></img></br>
@@ -146,7 +146,7 @@ fetch('tanks.json')
                            <h3 class="stats">AvDeCap: </br>
                             ${getCenteredString(getFixedLenStrFromNumber(DeCap, 6), 6)}</h1>
                             </div>
-                            <div class="box_3">
+                            <div class="box_3 pading">
                             <h1 class="stats">Effi: </br>
                             ${getCenteredString(getFixedLenStrFromNumber("?????", 6), 6)}</h1>
                             <h1 class="stats">WN7: </br>
@@ -182,8 +182,8 @@ fetch('tanks.json')
                             </div>
                             </div>
                             </div>
-                            <div>
-                            <h1 class="logo">Opis:</h1>
+                            <div  class="box_6">
+                            <h1 class="logo">Opis:</h1"></br>
                             ${value.description}
                             </div>
                             `;
@@ -222,7 +222,7 @@ fetch('tanks.json')
     });
 
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', (event) => {
     const NavY = $('.filtr').offset().top;
 
     const stickyNav = function () {
