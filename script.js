@@ -73,10 +73,6 @@ fetch('tanks.json')
                             const mark_of_mastery = data.data[Game_id][0].mark_of_mastery
                             const All_assisted = damage_assisted_radio + damage_assisted_track
 
-
-
-
-
                             const Kd = (frags / battles).toFixed(2)
                             const DMG = (damage_dealt / battles).toFixed(0)
                             const Sb = (spotted / battles).toFixed(2)
@@ -87,8 +83,13 @@ fetch('tanks.json')
                             const Cap = (capture_points / battles).toFixed(2)
                             const DeCap = (dropped_capture_points / battles).toFixed(2)
 
-                            const htm = `
-                            <div class="tlo">
+                            const htm = `<div type='button' class="siatka" data-modal-target="#${key}" id="info" value="${key}" ><div class="${premium}"><h1 class="logo2">${short_name}</h1><img src="${big_icon}" width="272" height="152
+                            "></img></br><div class="logo3">     <img src="img/T_${tier}.png" width="40" height="40">    <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img>     <img src="img/${klasa}.gif" width="56" height="40"></img></div></div></div></div>
+
+
+
+                            <div class="tlo" id="${key}">
+                            <button data-close-button class="close-button">&times;</button>
                             <div class="box">
                             <div>
                             <div class="siatka" id="info" value="${key}">
@@ -169,11 +170,43 @@ fetch('tanks.json')
                             </div></div>
                             `;
 
-                            const htm2 = `< div class="siatka" type = "button" onclick = "Tank()" id = "info" value = "${key}" ><div class="${premium}"><h1 class="logo2">${short_name}</h1><img src="${big_icon}" width="272" height="152
-          "></img></br><div class="logo3">     <img src="img/${tier}.png" width="40" height="40">    <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img>     <img src="img/${klasa}.gif" width="56" height="40"></img></div></div></div>`;
                             document
                                 .getElementById("tank")
                                 .insertAdjacentHTML("beforeend", htm);
+
+                            const openModalButtons = document.querySelectorAll('[data-modal-target]')
+                            const closeModalButtons = document.querySelectorAll('[data-close-button]')
+                            const overlay = document.getElementById('overlay')
+
+                            openModalButtons.forEach(button => {
+                                button.addEventListener('click', () => {
+                                    const modal = document.querySelector(button.dataset.keyTarget)
+                                    openModal(modal)
+                                })
+                            })
+                            overlay.addEventListener('click', () => {
+                                const modal = document.querySelector('.tlo.active')
+                                modals.forEach(modal => {
+                                    closeModal(modal)
+                                })
+                            })
+                            closeModalButtons.forEach(button => {
+                                button.addEventListener('click', () => {
+                                    const modal = button.closest(`.tlo`)
+                                    closeModal(modal)
+                                })
+                            })
+                            function openModal(modal) {
+                                if (modal == null) return
+                                modal.classList.add('active')
+                                overlay.classList.add('active')
+                            }
+                            function closeModal(modal) {
+                                if (modal == null) return
+                                modal.classList.remove('active')
+                                overlay.classList.remove('active')
+                            }
+
                         })
                 })
         }
