@@ -1,6 +1,22 @@
 const Game_id = `1073747782`
 const API_id = `10a871f6fab9f5647fdb2d0a433a0910`
 
+const openModalButtons = document.querySelectorAll('[data-modal-target]');
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
 fetch('tanks.json')
     .then(response => response.json())
     .then(data => {
@@ -83,13 +99,12 @@ fetch('tanks.json')
                             const Cap = (capture_points / battles).toFixed(2)
                             const DeCap = (dropped_capture_points / battles).toFixed(2)
 
-                            const htm = `<div type='button' class="siatka" data-modal-target="#${key}" id="info" value="${key}" ><div class="${premium}"><h1 class="logo2">${short_name}</h1><img src="${big_icon}" width="272" height="152
-                            "></img></br><div class="logo3">     <img src="img/T_${tier}.png" width="40" height="40">    <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img>     <img src="img/${klasa}.gif" width="56" height="40"></img></div></div></div></div>
+                            const htm = `<div type='button' class="siatka" data-modal-target="modal-${key}" id="info" value="${key}"><div class="${premium}"><h1 class="logo2">${short_name}</h1><img src="${big_icon}" width="272" height="152
+                            "></img></br><div class="logo3">     <img src="img/T_${tier}.png" width="40" height="40">    <img src="img/filter_flag_${nacja}.png" width="40" height="40"></img>     <img src="img/${klasa}.gif" width="56" height="40"></img></div></div></div></div>`;
 
 
 
-                            <div class="tlo" id="${key}">
-                            <button data-close-button class="close-button">&times;</button>
+                            const htm2 = `<button data-close-button class="close-button">&times;</button>
                             <div class="box">
                             <div>
                             <div class="siatka" id="info" value="${key}">
@@ -167,45 +182,41 @@ fetch('tanks.json')
                             <div>
                             <h1 class="logo">Opis:</h1>
                             ${value.description}
-                            </div></div>
+                            </div>
                             `;
 
                             document
                                 .getElementById("tank")
                                 .insertAdjacentHTML("beforeend", htm);
 
-                            const openModalButtons = document.querySelectorAll('[data-modal-target]')
-                            const closeModalButtons = document.querySelectorAll('[data-close-button]')
-                            const overlay = document.getElementById('overlay')
+                            document
+                                .getElementById("modal-body")
+                                .insertAdjacentHTML("beforeend", htm2);
 
-                            openModalButtons.forEach(button => {
-                                button.addEventListener('click', () => {
-                                    const modal = document.querySelector(button.dataset.keyTarget)
-                                    openModal(modal)
-                                })
-                            })
-                            overlay.addEventListener('click', () => {
-                                const modal = document.querySelector('.tlo.active')
-                                modals.forEach(modal => {
-                                    closeModal(modal)
-                                })
-                            })
+                            console.log("loop");
+
+
+                            document.querySelectorAll(`[data-modal-target]`).forEach(element => {
+
+                                if (element.dataset.modalTarget == `modal-${key}`) {
+
+                                    element.addEventListener('click', (tes) => {
+                                        /// Zmień zawartość modalu w zależności od czołgu. 
+                                        document.getElementsByClassName("modal-body")[0].innerHTML = htm2;
+
+                                        openModal(document.getElementById("modal"));
+                                    });
+
+
+                                }
+                            });
+
                             closeModalButtons.forEach(button => {
                                 button.addEventListener('click', () => {
-                                    const modal = button.closest(`.tlo`)
+                                    const modal = button.closest(`.modal`)
                                     closeModal(modal)
                                 })
                             })
-                            function openModal(modal) {
-                                if (modal == null) return
-                                modal.classList.add('active')
-                                overlay.classList.add('active')
-                            }
-                            function closeModal(modal) {
-                                if (modal == null) return
-                                modal.classList.remove('active')
-                                overlay.classList.remove('active')
-                            }
 
                         })
                 })
